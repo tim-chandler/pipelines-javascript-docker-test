@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: timchandlerpipelinesjavascriptdockertest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timchandlerpipelinesjavascriptdockertest
+  template:
+    metadata:
+      labels:
+        app: timchandlerpipelinesjavascriptdockertest 
+    spec:
+      containers:
+        - name: timchandlerpipelinesjavascriptdockertest 
+          image: mycontainerregistrytim1.azurecr.io/timchandlerpipelinesjavascriptdockertest
+          ports:
+          - containerPort: 8080
